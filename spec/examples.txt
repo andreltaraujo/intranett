@@ -1,0 +1,9 @@
+example_id                                           | status  | run_time        |
+---------------------------------------------------- | ------- | --------------- |
+./spec/controllers/tasks_controller_spec.rb[1:1:1]   | passed  | 0.38398 seconds |
+./spec/controllers/tasks_controller_spec.rb[1:1:2]   | passed  | 0.06079 seconds |
+./spec/controllers/welcome_controller_spec.rb[1:1:1] | passed  | 0.01543 seconds |
+./spec/features/tasks_spec.rb[1:1]                   | passed  | 0.73089 seconds |
+./spec/features/welcome_spec.rb[1:1]                 | passed  | 0.33217 seconds |
+./spec/features/welcome_spec.rb[1:2]                 | failed  | 0.34319 seconds |
+./spec/models/user_spec.rb[1:1]                      | pending | 0.00003 seconds |

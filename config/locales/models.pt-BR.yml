@@ -1,0 +1,30 @@
+"pt-BR":
+  activerecord:
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+      task:
+        one: Tarefa
+        other: Tarefas
+    attributes:
+      user:
+        id: Código
+        email: E-mail
+        name: Nome
+        password: Senha
+        password_confirmation: Confirme a Senha
+        role: Tipo de Acesso
+        created_at: Criado em
+        updated_at: Atualizado em
+      task:
+        id: Código
+        name: Nome da Tarefa
+        start_date: Data de Início
+        end_date: Data de Término
+        task_field: Descrição da Tarefa
+        status: Status
+        rmk: Motivo
+        user: Usuário
+        created_at: Criado em
+        updated_at: Atualizado em

@@ -1,0 +1,26 @@
+<!-- Modal -->
+<%= form_with url: tasks_path, method: :post, local: true do |form| %> 
+  <div class="modal fade" id="newtaskModal" tabindex="-1" role="dialog" aria-labelledby="newtaskModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newtaskModalLabel"><%= "Nova Tarefa" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= form.label :name %>:
+          <%= form.text_field :name, class:"form-control", id:"taskName" %>
+          <%= form.label :start_date %>:
+          <%= form.date_field :start_date, class:"form-control" %>
+          <%= form.hidden_field :user_id, class:"form-control", id:"userField"  %>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t('labels.Cancel') %></button>
+        <%= form.submit t('labels.Create Task'), class:"btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

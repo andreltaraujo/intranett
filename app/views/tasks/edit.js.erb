@@ -1,0 +1,19 @@
+$('.btn').after('<%= j render('tasks/edittask') %>');
+
+// Shows Modal
+$('#edittaskModal').modal();
+
+// Confirmation
+alert('Cancelar <%= @task.name %> ? ');
+
+// Puts Values on Task Fields
+$('h5.modal-title').text('<%= "Cancelar: #{@task.name}" %>');
+$('#editstartDate').val('<%= @task.start_date %>');
+$('#endDate').val('<%= @task.end_date %>');
+
+// Cancel Task and Change Task Status
+$(document).ready(function(){
+  $("form").submit(function(){
+    $('#editStatus').val('<%= @task.canceled! %>');
+  });
+});

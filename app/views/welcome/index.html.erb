@@ -1,0 +1,46 @@
+<div class="col-md-12 col-sm-12  ">
+  <div class="x_panel" style="height: auto;">
+    <div class="x_title">
+    <h2><%= t('labels.table')%>: <%= @users.model_name.human(count: 2) %><small></small></h2>
+      <ul class="nav navbar-right panel_toolbox">
+        <li>
+          <a class="collapse-link"><i class="fa fa-chevron-down"></i></a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+      <div class="x_content" style="display: none;">
+        <div class="table-responsive">
+          <table class="table table-striped jambo_table bulk_action">
+            <thead>
+              <tr class="headings">
+                <th>
+                </th>
+                <th class="column-title"><%= translate_attribute(@users, "id") %></th>
+                    <th class="column-title"><%= translate_attribute(@users, "name") %></th>
+                    <th class="column-title"><%= translate_attribute(@users, "email") %></th>
+                    <th class="column-title"><%= translate_attribute(@users, "role") %></th>
+                <th class="bulk-actions" colspan="7">
+                  <a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
+                </th>
+                <th th class="column-title">Action</th>
+                </tr>
+              </thead>
+            <tbody>
+            <% @users.each do |user| %>
+              <tr class="odd pointer">
+                <td>
+                </td>
+                <td class=" "><%= user.id %></td>
+                <td class=" "><%= user.name %></td>
+                <td class=" "><%= user.email %></td>
+                <td class=" "><%= user.role_i18n %></td>
+                <td class=" last"><% unless user_signed_in? %><%= link_to 'login', new_user_session_path %><% else %><% end %></td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

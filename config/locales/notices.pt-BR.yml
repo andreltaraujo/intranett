@@ -1,0 +1,4 @@
+"pt-BR":
+  notices:
+    confirm: Tem certeza?
+    confirm_with: Você deseja realmente excluir (<b>%{item}</b>)?

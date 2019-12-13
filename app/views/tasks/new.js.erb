@@ -1,0 +1,14 @@
+$(function(){
+  let $newtaskModal = $('#newtaskModal');
+
+  // Setting user.id to new task
+  $('#userField').val('<%= @task.user.id %>');
+
+  // Shows modal
+  $newtaskModal.modal();
+
+  // Set focus on 'Task Name' as modal in shown
+  $newtaskModal.on('shown.bs.modal', function () {
+    $('#taskName').trigger('focus')
+  })
+});

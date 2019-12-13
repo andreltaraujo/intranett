@@ -1,0 +1,8 @@
+// Puts Values on Task Fields
+$('h5.modal-title').text('<%= "#{@task.name} - #{@task.user.name}" %>');
+$('#startDate').val('<%= @task.start_date %>');
+$('#endDate').val('<%= @task.end_date %>');
+$('#status').val('<%= @task.status_i18n %>');
+
+// Shows Modal
+$('#showtaskModal').modal();

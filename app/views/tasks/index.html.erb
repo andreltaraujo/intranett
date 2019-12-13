@@ -1,0 +1,68 @@
+<div class="right_col" role="main">
+  <div class="">
+    <div class="clearfix"></div>
+      <div class="col-md-12 col-sm-12  ">
+        <div class="x_panel">
+          <div class="x_title">
+            <h2><%= "Nova Tarefa" %>
+            <code></code>
+              <%= link_to new_task_path, class:"btn btn-success btn-sm", remote: true do %><span class="glyphicon glyphicon-plus-sign"></span>
+              <% end %>
+            </h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <div class="table-responsive">
+              <table class="table table-striped jambo_table bulk_action">
+                <thead>
+                  <tr class="headings">
+                    <th>
+                      <input type="checkbox" id="check-all" class="flat">
+                    </th>
+                    <th class="column-title"><%= translate_attribute(@tasks, "id") %></th>
+                    <th class="column-title"><%= translate_attribute(@tasks, "name") %></th>
+                    <th class="column-title"><%= translate_attribute(@tasks, "start_date") %></th>
+                    <th class="column-title"><%= translate_attribute(@tasks, "end_date") %></th>
+                    <th class="column-title"><%= translate_attribute(@tasks, "status") %></th>
+                    <th class="column-title">Cancelar</th>
+                    <th class="column-title no-link last"><span class="nobr">Finalizar</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% @tasks.each do |task| %>
+                  <tr class="even pointer">
+                    <td class="a-center ">
+                      <input type="checkbox" class="flat" name="table_records">
+                    </td>
+                    <td class=" "><%= task.id %></td>
+                    <td class=" "><%= link_to (task.name), task_path(task.id), remote: true %></td>
+                    <td class=" "><% unless task.start_date.nil? %><%= l(task.start_date) %><% end %></td>
+                    <td class=" "><% unless task.end_date.nil? %><%= l(task.end_date) %><% end %></td>
+                    <td class=" "><%= task.status_i18n %></td>
+                    <td class="a-right a-right"><%= link_to edit_task_path(task.id), remote: true, class:"btn btn-danger btn-sm" do %>
+                      <span class="glyphicon glyphicon-remove-sign"></span>
+                    <% end %>
+                    </td>
+                    <td class=" last"><%= link_to edit_task_path(task.id), class:"btn btn-primary btn-sm" do %>
+                      <span class="glyphicon glyphicon-ok-sign"></span>
+                    <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: 'tasks/newtask' %>
+<%= render partial: 'tasks/showtask' %>

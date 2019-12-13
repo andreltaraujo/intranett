@@ -1,0 +1,26 @@
+"pt-BR":
+  enums:
+    user:
+      role:
+        collaborator: Colaborador
+        manager: Gestor
+    task:
+      status:
+        waiting_for_start: Aguardando Início 
+        started: Iniciada
+        in_progress: Em andamento
+        waiting: Aguardando
+        closed: Encerrada
+        finished: Terminada
+        returned: Devolvido
+        canceled: Cancelada
+  labels:
+    table: Tabela
+    Home: Início
+    Login: Entrar
+    Logout: Sair
+    Tasks: Tarefas
+    Create Task: Criar
+    Cancel: Cancelar
+    Close: Fechar
+    Edit: Editar

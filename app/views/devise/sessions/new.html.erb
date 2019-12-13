@@ -1,0 +1,26 @@
+<div class="login_wrapper">
+  <div class="animate form login_form">
+    <section class="login_content">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <h1>Login</h1>
+        <div>
+        <%= f.email_field :email, class:"form-control",autofocus: true, placeholder:"Email" %>       
+        </div>
+        <div>
+          <%= f.password_field :password, class:"form-control", placeholder:"Password" %>
+        </div>
+        <div class="actions">
+        <%= f.submit "Login", class:"btn btn-default submit" %>
+        <%= render "devise/shared/links" %>
+        </div>
+        <div class="clearfix"></div>
+        <div class="separator">
+        <div>
+          <h1><%= image_tag('logo.png', size:"94x60") %></h1>
+          <p>©2019 All Rights Reserved</p>
+        </div>
+        </div>
+      <% end %>
+    </section>
+  </div>
+</div>
